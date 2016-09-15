@@ -1,0 +1,36 @@
+<div class="row">
+    <div>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 post-subject text-capitalize">
+      {{p.subject}}
+    </div>
+
+    <div class="col-md-6 text-right text-capitalize post-date">
+      {{p.createdBy}}
+      <br>
+      {{p.created.strftime("%b %d, %Y")}}
+    </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12 post-content">
+      {{p._render_text | safe}}
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-md-12">
+    {% if p.likes == None or p.likes == 0 %}
+        <a href='/like/{{p.key().id()}}'>
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        </a>
+    {% else %}
+        <a href='/like/{{p.key().id()}}'>
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"> {{p.likes}}</i>
+        </a>
+    {% endif %}
+

@@ -1,0 +1,14 @@
+
+    <div>
+      {{p.subject}}
+    </div>
+
+    <div>
+      {{p.created.strftime("%b %d, %Y")}}
+    </div>
+  </div>
+
+  <div>
+    {{p._render_text | safe}}
+  </div>
+

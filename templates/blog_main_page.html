@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12"
+        <hr>
+    </div>
+</div>
+
+{% for content in display_content %}
+
+        {{content.render()|safe}}
+    <a href='/comment/{{content.key().id()}}'>&nbsp;Comments</a>
+    </div>
+</div>
+
+        <div class="row">
+            <div class="col-md-12 center-block>">
+                <form method=post>
+                    <input type="text" name="newComment" value="">
+                    <button class="form-buttons" formaction='/comment/{{content.key().id()}}'>Add Comment</button>
+                </form>
+            </div>
+        </div>
+
+{% endfor %}
+
+{% endblock %}

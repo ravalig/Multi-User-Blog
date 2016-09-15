@@ -1,0 +1,120 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    color: #333;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+table {
+    display: flex;
+    justify-content: center
+}
+
+input[type=text],
+input[type=password] {
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+textarea {
+  width: 500px;
+  height: 300px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+.title-container {
+    background-color: lightblue;
+    margin-top: 10px;
+}
+
+.main-title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 40px;
+    color: #fe642e;
+}
+
+.home-logo {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.login,
+.signup,
+.logout,
+.mypage {
+    margin-top: 20px;
+    background-color: #666666;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+.main-title-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.error {
+    color: red;
+}
+
+.form-buttons {
+    background-color: #666666;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+.center-align {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    border-spacing: 20px;
+    border-collapse: separate;
+}
+
+.post-subject {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-date,
+.comment-date {
+    margin-top: 20px;
+    right: 0px;
+    bottom: 0px;
+    color: #999;
+}
+
+.post-content,
+.comment {
+    margin-top: 5px;
+}
+
+.post-edit {
+    margin-top: 25px;
+}
+
+.comment {
+    margin-top: 20px;
+}
+
+.content-label {
+    vertical-align: top;
+}

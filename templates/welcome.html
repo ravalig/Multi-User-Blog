@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12 text-left text-capitalize">
+        <h3>Hi {{username}},</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <form>
+            <button class="form-buttons" formaction='/newpost'>NewPost</button>
+        </form>
+    </div>
+</div>
+
+{% for post in posts %}
+    <div class="row">
+        <div class="col-md-8 post-subject text-capitalize">
+            <h2>{{post.subject}}</h2>
+        </div>
+
+        <div class="col-md-4 post-edit text-right">
+            <a href="/editpost/{{post.key().id()}}">
+                <i class="fa fa-pencil" aria-hidden="true">Edit</i>
+            </a>
+            <a href="/deletepost/{{post.key().id()}}">
+                <i class="fa fa-trash" aria-hidden="true">Delete</i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            {{post.content.replace('\n', '<br>') | safe}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            {% if post.likes == None or post.likes == 0 %}
+                <a href='/like/{{post.key().id()}}'>
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                </a>
+            {% else %}
+                <a href='/like/{{post.key().id()}}'>
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{post.likes}}
+                </a>
+            {% endif %}
+
+            <a href='/comment/{{post.key().id()}}'>&nbsp;Comments</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+
+{% endfor %}
+{% endblock %}

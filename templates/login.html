@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 center-block text-center">
+        <h2>Login</h2>
+    </div>
+</div>
+
+<form method=Post>
+    <div class="row">
+        <div class="col-md-12 error center-align">
+            {{error}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 center-block">
+            <table class="table">
+                <tr>
+                    <td class="label">
+                        Username
+                    </td>
+                    <td>
+                        <input type="text" name="username" value="{{username}}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Password
+                    </td>
+                    <td>
+                        <input type="password" name="password" value="{{password}}">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12 center-align">
+            <input class="form-buttons" type="submit">
+            <button class = "form-buttons" formaction='/signup'>Sign Up</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

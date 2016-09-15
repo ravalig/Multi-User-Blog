@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>New Post</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12"
+        <hr>
+    </div>
+</div>
+<form method="post">
+<div class="row">
+    <div class="col-md-12 center-block">
+        <table class="table">
+            <tr>
+                <td class="label">
+                    Subject
+                </td>
+                <td>
+                    <input type="text" name="subject" value="{{subject}}">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label content-label">
+                    Content
+                </td>
+                <td>
+                    <textarea name="content">{{content}}</textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 error">
+        {{error}}
+    </div>
+</div>
+
+<div class="row>">
+    <div class="col-md-12 center-align">
+            <input class="form-buttons" type="submit">
+            <button class="form-buttons" formaction='/logout'>Logout</button>
+    </div>
+</div>
+</form>
+{% endblock %}

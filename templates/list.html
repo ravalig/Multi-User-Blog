@@ -1,0 +1,16 @@
+    <h3> List </h3>
+    {% for list in display_content %}
+        <!-- <div>
+            <div>Subject:   {{list.subject}}</div>
+            <div>Content:   {{list.content}}</div>
+            <div>Owner of the post:    {{list.createdBy}}</div>
+            <div>Id:   {{list.key().id()}}</div>
+            <br>
+        </div> -->
+        <div>
+            <div>Comment: {{list.comment}}</div>
+            <div>Created By: {{list.createdBy}}</div>
+            <div>Post Id: {{list.post_id}}</div>
+            <br>
+        </div>
+    {% endfor %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {{post.render() | safe}}
+    <a href="">&nbsp;&nbsp;&nbsp;Comments</a>
+  </div>
+</div>
+
+<form>
+{% for c in comments %}
+<div class="row">
+    <div class="col-md-3 comment">
+        {{c.comment}} &nbsp;
+        <a href="/commentedit/{{c.key().id()}}/{{post.key().id()}}">
+                <i class="fa fa-pencil" aria-hidden="true">Edit</i>
+        </a>
+        &nbsp;&nbsp;
+        <a href="/commentdelete/{{c.key().id()}}/{{post.key().id()}}">
+                <i class="fa fa-trash" aria-hidden="true">Delete</i>
+        </a>
+    </div>
+
+    <div class="col-md-9 text-left text-capitalize comment-date">
+        {{c.createdBy}} On
+        {{c.created.strftime("%b %d, %Y")}}
+    </div>
+    <br>
+    <br>
+</div>
+{% endfor %}
+</form>
+
+<div class="row">
+    <div class="col-md-12 error">
+        {{error}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+</div>
+
+{% endblock %}

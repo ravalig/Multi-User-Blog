@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 center-align">
+        <h2>Edit Post</h2>
+    </div>
+</div>
+
+<form method="post">
+<div class="row">
+    <div class="col-md-12">
+        <input type="hidden" name="post_id" value="{{post_id}}">
+        <table class="table">
+            <tr>
+                <td class="label">
+                    Subject
+                </td>
+                <td>
+                    <input type="text" name="subject" value="{{post.subject}}">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label content-label">
+                    Content
+                </td>
+                <td>
+                    <textarea name="content" value="{{post.content}}">{{post.content}}</textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 error">
+        {{error}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 text-right">
+            <button class="form-buttons" type="submit">Update</button>
+
+    </div>
+</form>
+    <div class="col-md-6">
+        <form class="text-left">
+            <button class="form-buttons" formaction='/welcome'>Cancel</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
